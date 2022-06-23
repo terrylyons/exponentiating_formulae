@@ -8,10 +8,11 @@ add_subdirectory(libalgebra)
 # include_directories(headers)
 add_executable(
   exponentiating_formulae
-  main.cpp
+  "main.cpp"
   "environment.h"
   "forward_transformer.cpp"
-  "SHOW.h")
+  "SHOW.h" 
+  "adjoint_multiplication.cpp")
 
 #target_include_directories(exponentiating_formulae PRIVATE headers)
 target_link_libraries(exponentiating_formulae PUBLIC Libalgebra::Libalgebra)
