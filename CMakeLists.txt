@@ -12,7 +12,8 @@ add_executable(
   "environment.h"
   "forward_transformer.cpp"
   "SHOW.h" 
-  "adjoint_multiplication.cpp")
+  "adjoint_multiplication.cpp" 
+  "bidirectional_transformer.cpp")
 
 #target_include_directories(exponentiating_formulae PRIVATE headers)
 target_link_libraries(exponentiating_formulae PUBLIC Libalgebra::Libalgebra)
