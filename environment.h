@@ -110,10 +110,11 @@ struct Environment {
             std::stringstream buffer;
             buffer << basis_key_pair;
             legend[count + offset] = std::pair(key, buffer.str());
-            std::cout << " monomial index:" << count + offset << " basis index:" << key << " basis value:" << buffer.str() << "\n";
+            std::cout << " monomial index: x" << count + offset << " basis index:" << key << " basis value:" << buffer.str() << "\n";
 
             ++count;
         }
+        std::cout << "\n";
         return result;
     }
 
