@@ -42,6 +42,9 @@ int adjoint_multiplication()
 
     SHOW(IN::K(sh, sig_before * sig_after));
 	SHOW(IN::K(sh, sig_before * sig_after) - IN::K(IN::adjoint_to_multiply(sig_before, sh), sig_after));
-	
+
+	IN::TENSOR sig(sig_before * sig_after);
+    SHOW(IN::K(sh, antipode(sig_after)) - IN::K(IN::adjoint_to_multiply(antipode(sig),sh), sig_before));
+
 	return 0;
 }
