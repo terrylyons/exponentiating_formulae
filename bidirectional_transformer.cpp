@@ -127,6 +127,22 @@ int bidirectional_transformer()
     OUT::TENSOR ans_before = apply1<OUT, WORKING>(result, sig_before_working);
     SHOW(antipode(ans_before) * ans_before);
 
+    // note that result must be applied to the WORKING signature of the path 
+    // provided by the extended log signatures along the chosen partition, and depends
+    // on the partition; 
+    // 
+    // but is defined for any interval where we have determined the working signature
+    // so we really have defined a rough path!!!!
+    // 
+    // DEPTHIN rough path -> (fix a partition) piecewise lie approximation to degee DEPTHIN
+    // -> extend this to rough path defined on every interval of degree DEPTHWORKING
+    // -> use the formulae to produce a DEPTHOUT rough path on any interval
+    // 
+    // So can change the partition from layer to layer!!!!!!!!!! 
+    //
+    // the magic is that the twisting of the shuffles does not depend on
+    // the partition but only on the IN::sig
+    //
     OUT::TENSOR ans_before_during = apply1<OUT, WORKING>(result, sig_before_working * sig_during_working);
     SHOW(antipode(ans_before_during) * ans_before_during);
 
